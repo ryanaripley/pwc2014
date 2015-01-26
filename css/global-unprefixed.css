@@ -763,6 +763,7 @@ textarea {
     page-break-after: avoid;
   }
 }
+/* Make sure this is new! */
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -825,9 +826,13 @@ section.full {
   font-size: 2em;
 }
 
+#letter {
+  background-color: #054f7d;
+}
+
 #one {
   padding-top: 10em;
-  background-image: linear-gradient(#00a7cf, #861a54);
+  background-image: linear-gradient(#861a54, #a7bbc9);
 }
 
 #two {
@@ -840,6 +845,22 @@ section.full {
 
 #four {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/03_members.jpg);
+}
+
+#five {
+  background-image: linear-gradient(#ee3126, #94d6dc);
+}
+
+#six {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/01_our_season.jpg);
+}
+
+#seven {
+  background-image: linear-gradient(#00a7cf, #861a54);
+}
+
+#eight {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
 }
 
 #final {
@@ -896,6 +917,10 @@ h1 {
 p {
   font-size: 1.4em;
   max-width: 23em;
+}
+
+.stat p {
+  max-width: 31em;
 }
 
 p a {

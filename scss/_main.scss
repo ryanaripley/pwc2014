@@ -5,7 +5,7 @@ $spacing: 38%;
 
 $pp-black: #231f20;
 $pp-purple: #861a54;
-$pp-red: #ee3126;
+$pp-red: #ee3126; /* Make sure this is new! */
 $pp-blue: #054f7d;
 $pp-ltblue: #00a7cf;
 $sp-black: #58595b;
@@ -36,6 +36,9 @@ $font-heavy: 900;
   };
   @if $type == four {
   	background-image: linear-gradient($pp-ltblue,$sp-yellow);
+  };
+  @if $type == five {
+    background-image: linear-gradient($pp-purple,$sp-ltblue);
   };
 }
 
@@ -90,9 +93,12 @@ section.full {
     font-size: 2em;
   }
 }
+#letter {
+  background-color: $pp-blue;
+}
 #one {
   padding-top: 10em;
-  @include grad(one);
+  @include grad(five);
 }
 #two {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
@@ -103,6 +109,18 @@ section.full {
 }
 #four {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/03_members.jpg);
+}
+#five {
+  @include grad(three);  
+}
+#six {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/01_our_season.jpg);
+}
+#seven {
+  @include grad(one);
+}
+#eight {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
 }
 #final {
   @include grad(four);
@@ -148,6 +166,9 @@ h1 {
 p {
   font-size: 1.4em;
   max-width: 23em;
+}
+.stat p {
+  max-width: 31em;
 }
 p a {
   font-style: italic;
