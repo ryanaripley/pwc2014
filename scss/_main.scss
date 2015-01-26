@@ -1,0 +1,177 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,900,300italic,900italic);
+
+$bp-small: 650px;
+$spacing: 38%;
+
+$pp-black: #231f20;
+$pp-purple: #861a54;
+$pp-red: #ee3126;
+$pp-blue: #054f7d;
+$pp-ltblue: #00a7cf;
+$sp-black: #58595b;
+$sp-purple: #cbabd1;
+$sp-yellow: #efe348;
+$sp-blue: #94d6dc;
+$sp-ltblue: #a7bbc9;
+
+$font-light: 300;
+$font-heavy: 900;
+
+@mixin group {
+	&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+	}
+}
+@mixin grad($type) {
+  @if $type == one {
+  	background-image: linear-gradient($pp-ltblue,$pp-purple);
+  };
+  @if $type == two {
+  	background-image: linear-gradient($pp-blue,$sp-blue);
+  };
+  @if $type == three {
+  	background-image: linear-gradient($pp-red,$sp-blue);
+  };
+  @if $type == four {
+  	background-image: linear-gradient($pp-ltblue,$sp-yellow);
+  };
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  color: white;
+  font-family: "Lato", sans-serif;
+  @media (max-width: $bp-small) {
+    font-size: .8em;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5em;
+  position: relative;
+  width: 100%;
+  @include group;
+}
+section.full {
+  height: 100%;
+}
+#top {
+  h1 {
+    color: $sp-ltblue;
+  }
+  h2 {
+    color: $pp-purple;
+    font-size: 2em;
+  }
+}
+#one {
+  padding-top: 10em;
+  @include grad(one);
+}
+#two {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
+  
+}
+#three {
+  @include grad(two);
+}
+#four {
+  background-image: url(https://pwcenter.org/sites/default/files/feature-block/03_members.jpg);
+}
+#final {
+  @include grad(four);
+}
+.stat {
+  margin: 0 2em 10em $spacing;
+  &:last-of-type {
+    margin-bottom: 5em;
+  }
+  @media (max-width: $bp-small) {
+    margin-left: 2em;
+  }
+}
+.stat.vcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.number {
+  font-size: 3em;
+  font-weight: 900;
+  padding-right: .4em;
+  position: absolute;
+  left: 0;
+  text-align: right;
+  width: $spacing;
+  @media (max-width: $bp-small) {
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+}
+h1 {
+  font-size: 3em;
+  font-weight: 900;
+}
+.stat img {
+  border-radius: 50%;
+  margin: .4em .8em .4em 0;
+  width: 140px;
+  height: 140px;
+}
+p {
+  font-size: 1.4em;
+  max-width: 23em;
+}
+p a {
+  font-style: italic;
+}
+
+.scroll-message {
+  animation: scrollMessage 2.5s;
+  bottom: 2em;
+  color: $sp-black;
+  font-size: 1.2em;
+  margin-left: $spacing;
+  position: absolute;
+  @media (max-width: $bp-small) {
+    left: 50%;
+    margin-left: 0;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+@keyframes scrollMessage {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+
