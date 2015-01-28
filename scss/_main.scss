@@ -1,7 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,900,300italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic);
 
 $bp-small: 650px;
-$spacing: 38%;
+$spacing: 30%;
 
 $pp-black: #231f20;
 $pp-purple: #861a54;
@@ -15,7 +15,7 @@ $sp-blue: #94d6dc;
 $sp-ltblue: #a7bbc9;
 
 $font-light: 300;
-$font-heavy: 900;
+$font-heavy: 700;
 
 @mixin group {
 	&:after {
@@ -71,6 +71,9 @@ a {
 a:hover, a:focus {
   text-decoration: underline;
 }
+em {
+  font-style: italic;
+}
 section {
   background-attachment: fixed;
   background-position: center;
@@ -85,8 +88,16 @@ section.full {
   height: 100%;
 }
 #top {
+  background-color: white;
   h1 {
     color: $sp-ltblue;
+  }
+  svg#logo {
+    max-width: 90%;
+    width: 30em;
+  }
+  svg#logo .logo {
+    fill: $sp-ltblue;
   }
   h2 {
     color: $pp-purple;
@@ -98,7 +109,7 @@ section.full {
 }
 #one {
   padding-top: 10em;
-  @include grad(five);
+  @include grad(four);
 }
 #two {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
@@ -121,9 +132,26 @@ section.full {
 }
 #eight {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
+  padding-bottom: 10em;
 }
 #final {
   @include grad(four);
+  svg#mark {
+    margin-top: 2em;
+    max-width: 90%;
+    width: 7em;
+  }
+  svg#mark .mark {
+    fill: white;
+  }
+}
+.letter-wrapper {
+  margin: 0 auto 10em;
+  max-width: 44em;
+  width: 80%;
+  @media (max-width: $bp-small) {
+    width: 96%;
+  }
 }
 .stat {
   margin: 0 2em 10em $spacing;
@@ -141,7 +169,7 @@ section.full {
 }
 .number {
   font-size: 3em;
-  font-weight: 900;
+  font-weight: $font-heavy;
   padding-right: .4em;
   position: absolute;
   left: 0;
@@ -155,9 +183,14 @@ section.full {
 }
 h1 {
   font-size: 3em;
-  font-weight: 900;
+  font-weight: $font-heavy;
 }
-.stat img {
+img.signature {
+  display: block;
+  margin-bottom: .5em;
+  max-width: 12em;
+}
+img.circle {
   border-radius: 50%;
   margin: .4em .8em .4em 0;
   width: 140px;
@@ -165,7 +198,6 @@ h1 {
 }
 p {
   font-size: 1.4em;
-  max-width: 23em;
 }
 .stat p {
   max-width: 31em;
@@ -173,7 +205,6 @@ p {
 p a {
   font-style: italic;
 }
-
 .scroll-message {
   animation: scrollMessage 2.5s;
   bottom: 2em;
@@ -194,5 +225,7 @@ p a {
   100% {opacity: 1;}
 }
 
-
+.report-link {
+  margin-top: 3em;
+}
 

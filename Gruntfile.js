@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         }
       },
       files: {
-        files: ['*.php'],
+        files: ['*.php','*.html'],
         options: {
           span: false,
         }

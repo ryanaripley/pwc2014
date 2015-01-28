@@ -5,7 +5,7 @@
 /**
  * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,900,300italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic);
 article,
 aside,
 details,
@@ -517,6 +517,12 @@ html {
   line-height: 1.4;
 }
 
+@media (max-width: 1165px) and (min-width: 650px) {
+  html {
+    font-size: .9em;
+    color: red;
+  }
+}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -796,6 +802,10 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+em {
+  font-style: italic;
+}
+
 section {
   background-attachment: fixed;
   background-position: center;
@@ -815,8 +825,18 @@ section.full {
   height: 100%;
 }
 
+#top {
+  background-color: white;
+}
 #top h1 {
   color: #a7bbc9;
+}
+#top svg#logo {
+  max-width: 90%;
+  width: 30em;
+}
+#top svg#logo .logo {
+  fill: #a7bbc9;
 }
 #top h2 {
   color: #861a54;
@@ -829,8 +849,8 @@ section.full {
 
 #one {
   padding-top: 10em;
-  background-image: -webkit-linear-gradient(#861a54, #a7bbc9);
-  background-image: linear-gradient(#861a54, #a7bbc9);
+  background-image: -webkit-linear-gradient(#00a7cf, #efe348);
+  background-image: linear-gradient(#00a7cf, #efe348);
 }
 
 #two {
@@ -862,15 +882,35 @@ section.full {
 
 #eight {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
+  padding-bottom: 10em;
 }
 
 #final {
   background-image: -webkit-linear-gradient(#00a7cf, #efe348);
   background-image: linear-gradient(#00a7cf, #efe348);
 }
+#final svg#mark {
+  margin-top: 2em;
+  max-width: 90%;
+  width: 7em;
+}
+#final svg#mark .mark {
+  fill: white;
+}
+
+.letter-wrapper {
+  margin: 0 auto 10em;
+  max-width: 44em;
+  width: 80%;
+}
+@media (max-width: 650px) {
+  .letter-wrapper {
+    width: 96%;
+  }
+}
 
 .stat {
-  margin: 0 2em 10em 38%;
+  margin: 0 2em 10em 30%;
 }
 .stat:last-of-type {
   margin-bottom: 5em;
@@ -891,12 +931,12 @@ section.full {
 
 .number {
   font-size: 3em;
-  font-weight: 900;
+  font-weight: 700;
   padding-right: .4em;
   position: absolute;
   left: 0;
   text-align: right;
-  width: 38%;
+  width: 30%;
 }
 @media (max-width: 650px) {
   .number {
@@ -908,10 +948,16 @@ section.full {
 
 h1 {
   font-size: 3em;
-  font-weight: 900;
+  font-weight: 700;
 }
 
-.stat img {
+img.signature {
+  display: block;
+  margin-bottom: .5em;
+  max-width: 12em;
+}
+
+img.circle {
   border-radius: 50%;
   margin: .4em .8em .4em 0;
   width: 140px;
@@ -920,7 +966,6 @@ h1 {
 
 p {
   font-size: 1.4em;
-  max-width: 23em;
 }
 
 .stat p {
@@ -937,7 +982,7 @@ p a {
   bottom: 2em;
   color: #58595b;
   font-size: 1.2em;
-  margin-left: 38%;
+  margin-left: 30%;
   position: absolute;
 }
 @media (max-width: 650px) {
@@ -967,10 +1012,15 @@ p a {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
+}
+.report-link {
+  margin-top: 3em;
 }
