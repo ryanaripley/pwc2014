@@ -173,6 +173,7 @@ section.full {
   padding-right: .4em;
   position: absolute;
   left: 0;
+  line-height: 1.1;
   text-align: right;
   width: $spacing;
   @media (max-width: $bp-small) {
@@ -184,6 +185,8 @@ section.full {
 h1 {
   font-size: 3em;
   font-weight: $font-heavy;
+  line-height: 1.1;
+  margin-top: .1em;
 }
 img.signature {
   display: block;
@@ -195,6 +198,13 @@ img.circle {
   margin: .4em .8em .4em 0;
   width: 140px;
   height: 140px;
+}
+img.rect, iframe {
+  border-radius: 2px;
+  display: block;
+  margin-top: .5em;
+  max-width: 100%;
+  width: 600px;
 }
 p {
   font-size: 1.4em;
