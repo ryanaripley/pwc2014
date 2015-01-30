@@ -5,7 +5,6 @@
 /**
  * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic);
 article,
 aside,
 details,
@@ -769,6 +768,7 @@ textarea {
     page-break-after: avoid;
   }
 }
+/* @import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic); */
 /* Make sure this is new! */
 *, *:before, *:after {
   box-sizing: border-box;
@@ -788,7 +788,7 @@ html, body {
 
 body {
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: 'WilsonTextAlt-RegularWeb', sans-serif;
 }
 @media (max-width: 650px) {
   body {
@@ -927,7 +927,7 @@ section.full {
 
 .number {
   font-size: 3em;
-  font-weight: 700;
+  font-weight: 400;
   padding-right: .4em;
   position: absolute;
   left: 0;
@@ -945,7 +945,7 @@ section.full {
 
 h1 {
   font-size: 3em;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.1;
   margin-top: .1em;
 }

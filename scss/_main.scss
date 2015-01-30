@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic);
+/* @import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic); */
 
 $bp-small: 650px;
 $spacing: 30%;
@@ -14,8 +14,8 @@ $sp-yellow: #efe348;
 $sp-blue: #94d6dc;
 $sp-ltblue: #a7bbc9;
 
-$font-light: 300;
-$font-heavy: 700;
+$font-light: 400;
+$font-heavy: 400;
 
 @mixin group {
 	&:after {
@@ -59,7 +59,7 @@ html, body {
 }
 body {
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: 'WilsonTextAlt-RegularWeb', sans-serif;
   @media (max-width: $bp-small) {
     font-size: .8em;
   }
@@ -113,7 +113,6 @@ section.full {
 }
 #two {
   background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
-  
 }
 #three {
   @include grad(two);
