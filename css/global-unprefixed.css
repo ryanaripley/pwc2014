@@ -890,25 +890,24 @@ section.full {
 #final svg#mark {
   margin-top: 2em;
   max-width: 90%;
-  width: 7em;
+  width: 5em;
 }
 #final svg#mark .mark {
   fill: white;
 }
 
 .letter-wrapper {
-  margin: 0 auto 10em;
-  max-width: 44em;
-  width: 80%;
+  margin: 0 4em 10em 30%;
 }
 @media (max-width: 650px) {
   .letter-wrapper {
-    width: 96%;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 
 .stat {
-  margin: 0 2em 10em 30%;
+  margin: 0 4em 10em 30%;
 }
 .stat:last-of-type {
   margin-bottom: 5em;
@@ -916,6 +915,7 @@ section.full {
 @media (max-width: 650px) {
   .stat {
     margin-left: 2em;
+    margin-right: 2em;
   }
 }
 
@@ -1004,11 +1004,9 @@ p a {
   0% {
     opacity: 0;
   }
-
   50% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1016,3 +1014,5 @@ p a {
 .report-link {
   margin-top: 3em;
 }
+
+/*# sourceMappingURL=global-unprefixed.css.map */

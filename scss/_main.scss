@@ -138,27 +138,27 @@ section.full {
   svg#mark {
     margin-top: 2em;
     max-width: 90%;
-    width: 7em;
+    width: 5em;
   }
   svg#mark .mark {
     fill: white;
   }
 }
 .letter-wrapper {
-  margin: 0 auto 10em;
-  max-width: 44em;
-  width: 80%;
+  margin: 0 4em 10em $spacing;
   @media (max-width: $bp-small) {
-    width: 96%;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 .stat {
-  margin: 0 2em 10em $spacing;
+  margin: 0 4em 10em $spacing;
   &:last-of-type {
     margin-bottom: 5em;
   }
   @media (max-width: $bp-small) {
     margin-left: 2em;
+    margin-right: 2em;
   }
 }
 .stat.vcenter {
