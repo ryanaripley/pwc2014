@@ -798,10 +798,12 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  transition: color .1s ease-in-out;
 }
 
 a:hover, a:focus {
+  color: #e3f3ff;
   text-decoration: underline;
 }
 
@@ -979,10 +981,6 @@ p {
   max-width: 31em;
 }
 
-p a {
-  font-style: italic;
-}
-
 .scroll-message {
   animation: scrollMessage 2.5s;
   bottom: 2em;
@@ -1004,9 +1002,11 @@ p a {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -1014,5 +1014,3 @@ p a {
 .report-link {
   margin-top: 3em;
 }
-
-/*# sourceMappingURL=global-unprefixed.css.map */
