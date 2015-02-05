@@ -194,12 +194,46 @@ img.signature {
   margin-bottom: .5em;
   max-width: 12em;
 }
-img.circle {
+.img-wrapper {
   border-radius: 50%;
+  display: inline-block;
   margin: .4em .8em .4em 0;
-  width: 140px;
   height: 140px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 140px;
 }
+.img-link, .img-link:hover, .img-link:active {
+  text-decoration: none;
+}
+img.circle {
+  width: 100%;
+  height: 100%;
+}
+.img-screen {
+  align-items: center;
+  background-color: rgba(0,0,0,.4);
+  border-radius: 50%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  transition: opacity .15s ease-in-out;
+}
+.img-wrapper .caption {
+  color: white;
+  font-size: 1.3em;
+  padding: 5px;
+}
+.img-screen:hover, .img-screen:active {
+  opacity: 1;
+}
+
 img.rect, iframe {
   border-radius: 2px;
   display: block;
