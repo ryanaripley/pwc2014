@@ -52,92 +52,121 @@ $font-heavy: 400;
   margin: 0;
   padding: 0;
 }
-
-html, body {
+html, body, #page {
   height: 100%;
   width: 100%;
 }
+html {
+  /* overflow: hidden; /* fix choppy mouse scrolling in IE */
+}
 body {
+  background: $pp-blue;
   color: white;
   font-family: 'WilsonTextAlt-RegularWeb', sans-serif;
+  position: relative;
+  
   @media (max-width: $bp-small) {
     font-size: .8em;
   }
 }
+
 a {
   color: inherit;
   text-decoration: underline;
   transition: color .1s ease-in-out;
 }
 a:hover, a:focus {
-  color: #e3f3ff;
-  text-decoration: underline;
+  color: white;
 }
 em {
   font-style: italic;
 }
-section {
+.section {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: block;
   padding-top: 5em;
   position: relative;
   width: 100%;
   @include group;
 }
-section.full {
-  height: 100%;
-}
+
 #top {
   background-color: white;
-  h1 {
-    color: $sp-ltblue;
+  padding-top: 0;
+  .subtitle {
+    color: $pp-purple;
+    font-size: 2em;
+    margin-top: .5em;
   }
   svg#logo {
+    height: 7em;
     max-width: 90%;
     width: 30em;
   }
   svg#logo .logo {
     fill: $sp-ltblue;
   }
-  h2 {
-    color: $pp-purple;
-    font-size: 2em;
+  .logo-wrapper {
+    @include group;
   }
 }
 #letter {
   background-color: $pp-blue;
 }
 #one {
+  background-color: $pp-purple;
   padding-top: 10em;
   @include grad(four);
 }
 #two {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
+  background-color: $pp-ltblue;
+  @include grad(three);
+  @media (min-width: $bp-small) {
+    background-image: url(../img/bg_jwilliams_full.jpg);
+  }
 }
 #three {
+  background-color: $sp-yellow;
   @include grad(two);
 }
 #four {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/03_members.jpg);
+  background-color: $sp-blue;
+  @include grad(one);
+  @media (min-width: $bp-small) {
+    background-image: url(../img/bg_crackatook_full.jpg);
+  }
 }
 #five {
+  background-color: $pp-blue;
   @include grad(three);  
 }
 #six {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/01_our_season.jpg);
+  background-color: $pp-red;
+  @include grad(four);
+  @media (min-width: $bp-small) {
+    background-image: url(../img/bg_royalsociety_full.jpg);
+  }
 }
 #seven {
-  @include grad(one);
+  background-color: $sp-ltblue;
+  @include grad(one); 
 }
 #eight {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
+  background-color: $sp-purple;
   padding-bottom: 10em;
+  @include grad(two);
+  @media (min-width: $bp-small) {
+    background-image: url(../img/bg_royalsociety2_full.jpg);
+  }
 }
 #final {
+  background-color: $pp-ltblue;
   @include grad(four);
   svg#mark {
+    height: 3em;
     margin-top: 2em;
     max-width: 90%;
     width: 5em;
@@ -163,10 +192,24 @@ section.full {
     margin-right: 2em;
   }
 }
-.stat.vcenter {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.full {
+  height: 100%;
+  position: relative;
+  @media (max-width: $bp-small) {
+    height: auto;
+  }
+}
+.vcenter {
+  @media (min-width: $bp-small + 1) {
+    margin: 0 4em 10em $spacing;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (max-width: $bp-small) {
+    margin: 0 2em;
+    padding: 12em 0;
+  }
 }
 .number {
   font-size: 3em;
@@ -188,8 +231,9 @@ h1 {
   font-weight: $font-heavy;
   line-height: 1.1;
   margin-top: .1em;
+  max-width: 16em;
 }
-img.signature {
+.signature {
   display: block;
   margin-bottom: .5em;
   max-width: 12em;
@@ -203,6 +247,10 @@ img.signature {
   position: relative;
   text-align: center;
   width: 140px;
+  @media (max-width: $bp-small) {
+    height: 120px;
+    width: 120px;
+  }
 }
 .img-link, .img-link:hover, .img-link:active {
   text-decoration: none;
@@ -243,6 +291,7 @@ img.rect, iframe {
 }
 p {
   font-size: 1.4em;
+  max-width: 31em;
 }
 .stat p {
   max-width: 31em;

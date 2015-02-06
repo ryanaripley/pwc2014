@@ -778,14 +778,20 @@ textarea {
   padding: 0;
 }
 
-html, body {
+html, body, #page {
   height: 100%;
   width: 100%;
 }
 
+html {
+  /* overflow: hidden; /* fix choppy mouse scrolling in IE */
+}
+
 body {
+  background: #054f7d;
   color: white;
   font-family: 'WilsonTextAlt-RegularWeb', sans-serif;
+  position: relative;
 }
 @media (max-width: 650px) {
   body {
@@ -801,49 +807,50 @@ a {
 }
 
 a:hover, a:focus {
-  color: #e3f3ff;
-  text-decoration: underline;
+  color: white;
 }
 
 em {
   font-style: italic;
 }
 
-section {
+.section {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: block;
   padding-top: 5em;
   position: relative;
   width: 100%;
 }
-section:after {
+.section:after {
   content: "";
   display: table;
   clear: both;
 }
 
-section.full {
-  height: 100%;
-}
-
 #top {
   background-color: white;
+  padding-top: 0;
 }
-#top h1 {
-  color: #a7bbc9;
+#top .subtitle {
+  color: #861a54;
+  font-size: 2em;
+  margin-top: .5em;
 }
 #top svg#logo {
+  height: 7em;
   max-width: 90%;
   width: 30em;
 }
 #top svg#logo .logo {
   fill: #a7bbc9;
 }
-#top h2 {
-  color: #861a54;
-  font-size: 2em;
+#top .logo-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #letter {
@@ -851,48 +858,82 @@ section.full {
 }
 
 #one {
+  background-color: #861a54;
   padding-top: 10em;
   background-image: -webkit-linear-gradient(#00a7cf, #efe348);
   background-image: linear-gradient(#00a7cf, #efe348);
 }
 
 #two {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/02_playwrights_center.jpg);
+  background-color: #00a7cf;
+  background-image: -webkit-linear-gradient(#ee3126, #94d6dc);
+  background-image: linear-gradient(#ee3126, #94d6dc);
+}
+@media (min-width: 650px) {
+  #two {
+    background-image: url(../img/bg_jwilliams_full.jpg);
+  }
 }
 
 #three {
+  background-color: #efe348;
   background-image: -webkit-linear-gradient(#054f7d, #94d6dc);
   background-image: linear-gradient(#054f7d, #94d6dc);
 }
 
 #four {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/03_members.jpg);
+  background-color: #94d6dc;
+  background-image: -webkit-linear-gradient(#00a7cf, #861a54);
+  background-image: linear-gradient(#00a7cf, #861a54);
+}
+@media (min-width: 650px) {
+  #four {
+    background-image: url(../img/bg_crackatook_full.jpg);
+  }
 }
 
 #five {
+  background-color: #054f7d;
   background-image: -webkit-linear-gradient(#ee3126, #94d6dc);
   background-image: linear-gradient(#ee3126, #94d6dc);
 }
 
 #six {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/01_our_season.jpg);
+  background-color: #ee3126;
+  background-image: -webkit-linear-gradient(#00a7cf, #efe348);
+  background-image: linear-gradient(#00a7cf, #efe348);
+}
+@media (min-width: 650px) {
+  #six {
+    background-image: url(../img/bg_royalsociety_full.jpg);
+  }
 }
 
 #seven {
+  background-color: #a7bbc9;
   background-image: -webkit-linear-gradient(#00a7cf, #861a54);
   background-image: linear-gradient(#00a7cf, #861a54);
 }
 
 #eight {
-  background-image: url(https://pwcenter.org/sites/default/files/feature-block/04_fellows.jpg);
+  background-color: #cbabd1;
   padding-bottom: 10em;
+  background-image: -webkit-linear-gradient(#054f7d, #94d6dc);
+  background-image: linear-gradient(#054f7d, #94d6dc);
+}
+@media (min-width: 650px) {
+  #eight {
+    background-image: url(../img/bg_royalsociety2_full.jpg);
+  }
 }
 
 #final {
+  background-color: #00a7cf;
   background-image: -webkit-linear-gradient(#00a7cf, #efe348);
   background-image: linear-gradient(#00a7cf, #efe348);
 }
 #final svg#mark {
+  height: 3em;
   margin-top: 2em;
   max-width: 90%;
   width: 5em;
@@ -924,12 +965,31 @@ section.full {
   }
 }
 
-.stat.vcenter {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+.full {
+  height: 100%;
+  position: relative;
+}
+@media (max-width: 650px) {
+  .full {
+    height: auto;
+  }
+}
+
+@media (min-width: 651px) {
+  .vcenter {
+    margin: 0 4em 10em 30%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@media (max-width: 650px) {
+  .vcenter {
+    margin: 0 2em;
+    padding: 12em 0;
+  }
 }
 
 .number {
@@ -955,9 +1015,10 @@ h1 {
   font-weight: 400;
   line-height: 1.1;
   margin-top: .1em;
+  max-width: 16em;
 }
 
-img.signature {
+.signature {
   display: block;
   margin-bottom: .5em;
   max-width: 12em;
@@ -972,6 +1033,12 @@ img.signature {
   position: relative;
   text-align: center;
   width: 140px;
+}
+@media (max-width: 650px) {
+  .img-wrapper {
+    height: 120px;
+    width: 120px;
+  }
 }
 
 .img-link, .img-link:hover, .img-link:active {
@@ -1028,6 +1095,7 @@ img.rect, iframe {
 
 p {
   font-size: 1.4em;
+  max-width: 31em;
 }
 
 .stat p {
@@ -1070,13 +1138,26 @@ p {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 .report-link {
   margin-top: 3em;
+}
+
+.lt-ie9 .vcenter {
+  margin: 0 4em 10em 30%;
+  padding-top: 10em;
+}
+.lt-ie9 .logo-wrapper {
+  background-image: url(../img/pwc_logo.png);
+  background-repeat: no-repeat;
+  height: 75px;
+  width: 300px;
 }
