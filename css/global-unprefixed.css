@@ -1104,11 +1104,9 @@ p {
   0% {
     opacity: 0;
   }
-
   50% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1127,3 +1125,5 @@ p {
   height: 75px;
   width: 300px;
 }
+
+/*# sourceMappingURL=global-unprefixed.css.map */
