@@ -14,4 +14,15 @@ $(function() {
       }
     }
   });
+  if(navigator.userAgent.match(/Trident\/7\./)) {
+    $('body').on("mousewheel", function () {
+      console.log('hey');
+      event.preventDefault();
+
+      var wheelDelta = event.wheelDelta;
+
+      var currentScrollPosition = window.pageYOffset;
+      window.scrollTo(0, currentScrollPosition - wheelDelta);
+    });
+  };
 });
