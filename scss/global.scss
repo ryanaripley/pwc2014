@@ -1,4 +1,15 @@
+
+@media screen {
+
 @import 'normalize';
 @import 'html5';
 @import 'main';
 @import 'ie8';
+
+}
+
+@media print {
+
+@import 'print';
+
+}
